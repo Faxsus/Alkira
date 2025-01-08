@@ -45,31 +45,26 @@
     </header>
 
     <!-- Carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" data-interval="5000" style="margin-top: 60px; margin-bottom: 60px">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="img/perpus.jpg" alt="First slide" />
+          <img class="d-block w-100" src="C:\.kampus\responsi SIM\img\perpus.jpg" alt="First slide" />
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <img src="img/perpus (2).jpg" class="d-block w-100" alt="Second slide" />
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="img/slide2.jpg" alt="Second slide" />
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/slide3.jpg" alt="Third slide" />
+          <img src="img/perpus (1).jpg" class="d-block w-100" alt="Third slide" />
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <button class="carousel-control-prev" type="button" data-target="#carouselExampleInterval" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-target="#carouselExampleInterval" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
     <!-- Home Section -->
@@ -110,11 +105,18 @@
     <footer>
       <p>&copy; 2025 Perpustakaan Alkira | Semua Hak Dilindungi</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-      // Hide loading animation after 1 second
+      // Disable scrolling when loading
+      document.body.style.overflow = "hidden";
+
+      // Hide loading animation after 1 second and enable scrolling
       window.addEventListener("load", () => {
         setTimeout(() => {
           document.querySelector(".loading").style.display = "none";
+          document.body.style.overflow = "auto";
         }, 1000);
       });
 
@@ -122,6 +124,11 @@
       function toggleDarkMode() {
         document.body.classList.toggle("dark-mode");
       }
+
+      // Initialize Bootstrap Carousel
+      $(document).ready(function () {
+        $("#carouselExampleInterval").carousel();
+      });
     </script>
   </body>
 </html>
