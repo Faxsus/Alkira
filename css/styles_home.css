@@ -90,6 +90,7 @@ nav ul li a:hover {
   border-radius: 10px;
   max-width: 900px;
   margin: 0 auto;
+  outline: 2px solid #142044; /* Add outline */
 }
 
 .home .intro {
@@ -111,6 +112,9 @@ nav ul li a:hover {
 
 .home .news {
   margin-bottom: 30px;
+  outline: 2px solid #142044; /* Add outline */
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .home .news h3 {
@@ -140,6 +144,9 @@ nav ul li a:hover {
 
 .home .important-info {
   margin-bottom: 30px;
+  outline: 2px solid #142044; /* Add outline */
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .home .important-info h3 {
@@ -170,6 +177,7 @@ footer {
   bottom: 0;
   height: 50px; /* Set a fixed height */
   line-height: 30px; /* Center text vertically */
+  outline: 2px solid #142044; /* Add outline */
 }
 
 /* Loading Animation */
