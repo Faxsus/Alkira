@@ -1,0 +1,149 @@
+/* About Us Section */
+.about-us {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.about-us .content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.about-us .content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-us h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.about-us ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.about-us ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #34495e;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding-top: 50px;
+}
+
+h1,
+h2,
+h3 {
+  color: #2c3e50;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #34495e;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+header .logo h1 {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+header .menu-icon {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #1abc9c;
+}
+
+/* Footer */
+footer {
+  background-color: #34495e;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us h2 {
+    font-size: 2rem;
+  }
+
+  .about-us .content {
+    padding: 20px;
+  }
+
+  .about-us h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-us ul {
+    margin-left: 10px;
+  }
+}
