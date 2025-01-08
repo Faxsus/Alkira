@@ -70,7 +70,7 @@
       <!-- Formulir Pengaduan atau Saran Section -->
       <div class="form">
         <h3>Formulir Pengaduan atau Saran</h3>
-        <form action="#" method="POST">
+        <form id="pengaduanForm">
           <label for="name">Nama Lengkap:</label>
           <input type="text" id="name" name="name" required />
 
@@ -91,5 +91,25 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbz90x0WbMRWYtHLwCqgc3XyXXPM9tklaRLPKOYtj_Cyr0YW8wJk5Q40BYXkayP0gzOeKA/exec";
+      const form = document.getElementById("pengaduanForm"); // Mengambil form berdasarkan id
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // Mencegah reload halaman setelah submit
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            // Memunculkan modal setelah pengiriman berhasil
+            const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+            successModal.show();
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+          });
+      });
+    </script>
   </body>
 </html>

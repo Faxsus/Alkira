@@ -99,11 +99,20 @@ about-us h2 {
   text-align: left;
   font-size: 1.1rem;
   color: #34495e;
+  padding: 20px;
+  border: 2px solid #2c3e50; /* Add border for the frame */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #fff; /* White background for the frame */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 .about-us .content p {
   line-height: 1.8;
   margin-bottom: 20px;
+}
+
+.about-us .content h2 {
+  text-align: center; /* Center the text */
 }
 
 .about-us h3 {
