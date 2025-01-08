@@ -6,8 +6,13 @@
     <title>Help & Contact Us - Perpustakaan Alkira</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles_help.css" />
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
   </head>
   <body>
+    <!-- Loading Animation -->
+    <div class="loading">
+      <dotlottie-player src="https://lottie.host/2b55e0ad-7f01-4d8b-9583-276e0badf879/gHVwgpbfMJ.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+    </div>
     <!-- Header -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -109,6 +114,13 @@
           .catch((error) => {
             console.error("Error!", error.message);
           });
+      });
+
+      // Hide loading animation after 1 second
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.querySelector(".loading").style.display = "none";
+        }, 1000);
       });
     </script>
   </body>

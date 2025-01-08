@@ -122,6 +122,31 @@ footer {
   line-height: 30px; /* Center text vertically */
 }
 
+/* Loading Animation */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.loading .logo {
+  font-size: 3rem;
+  color: #1abc9c;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   header .menu-icon {
