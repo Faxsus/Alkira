@@ -304,26 +304,44 @@
             <form id="borrowForm">
               <div class="form-group">
                 <label for="bookTitle">Judul Buku</label>
-                <input type="text" class="form-control" id="bookTitle" readonly />
+                <input type="text" class="form-control" id="bookTitle" name="bookTitle" readonly />
               </div>
               <div class="form-group">
                 <label for="borrowerName">Nama Peminjam</label>
-                <input type="text" class="form-control" id="borrowerName" required />
-              </div>
-              <div class="form-group">
-                <label for="borrowDate">Tanggal Peminjaman</label>
-                <input type="date" class="form-control" id="borrowDate" required />
+                <input type="text" class="form-control" id="borrowerName" name="borrowerName" required />
               </div>
               <div class="form-group">
                 <label for="borrowerId">NIK/ID Peminjam</label>
-                <input type="text" class="form-control" id="borrowerId" required />
+                <input type="text" class="form-control" id="borrowerId" name="borrowerId" required />
               </div>
               <div class="form-group">
                 <label for="borrowerEmail">Email Peminjam</label>
-                <input type="email" class="form-control" id="borrowerEmail" required />
+                <input type="email" class="form-control" id="borrowerEmail" name="borrowerEmail" required />
+              </div>
+              <div class="form-group">
+                <label for="borrowDate">Tanggal Peminjaman</label>
+                <input type="date" class="form-control" id="borrowDate" name="borrowDate" required />
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">Success</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Data has been successfully submitted!</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -338,11 +356,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycby6c3ao1jSIpgcmvazQxP5LA75diZ5BArwx4PA5Ntv0aJjZiX3AFX7hx6i08N6hc4v7Yg/exec?sheetName=Peminjaman"; // URL dari Google Apps Script
+      const form = document.getElementById("borrowForm"); // Mengambil form berdasarkan id
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // Mencegah reload halaman setelah submit
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            // Menutup modal peminjaman
+            $("#borrowModal").modal("hide");
+            // Memunculkan modal setelah pengiriman berhasil
+            const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+            successModal.show();
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+          });
+      });
+
       // Hide loading animation after 1 second
       window.addEventListener("load", () => {
         setTimeout(() => {
           document.querySelector(".loading").style.display = "none";
-        }, 5000);
+        }, 1000);
       });
 
       // Filter books by category
@@ -363,14 +401,6 @@
         var title = button.data("title");
         var modal = $(this);
         modal.find(".modal-body #bookTitle").val(title);
-      });
-
-      // Form validation
-      $("#borrowForm").on("submit", function (event) {
-        event.preventDefault();
-        // Add custom validation logic here
-        alert("Form submitted successfully!");
-        $("#borrowModal").modal("hide");
       });
 
       // Toggle dark mode
