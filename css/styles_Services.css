@@ -113,6 +113,20 @@ nav ul li a:hover {
   text-align: justify;
 }
 
+.services .card {
+  height: 100%;
+}
+
+.services .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.services .card-text {
+  text-align: justify;
+}
+
 /* Footer */
 footer {
   background-color: #142044; /* Updated color */
