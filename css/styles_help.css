@@ -71,6 +71,11 @@ nav ul li a {
   margin-bottom: 5px; /* Add bottom margin to align with top spacing */
 }
 
+nav ul li a.active {
+  background-color: #dfbd69; /* Highlight active link */
+  color: #142044; /* Change text color for active link */
+}
+
 .text-white {
   color: white !important;
 }
@@ -114,7 +119,7 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.faq ul {
+faq ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
