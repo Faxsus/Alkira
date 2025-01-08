@@ -134,13 +134,15 @@ tr:hover {
 
 /* Footer */
 footer {
-  background-color: #34495e;
+  background-color: #142044; /* Updated color */
   color: #fff;
   text-align: center;
   padding: 10px;
   position: fixed;
   width: 100%;
   bottom: 0;
+  height: 50px; /* Set a fixed height */
+  line-height: 30px; /* Center text vertically */
 }
 
 /* Responsive Design */

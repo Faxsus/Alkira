@@ -118,6 +118,8 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+  height: 50px; /* Set a fixed height */
+  line-height: 30px; /* Center text vertically */
 }
 
 /* Responsive Design */

@@ -17,7 +17,6 @@ h1,
 h2,
 h3 {
   color: #2c3e50;
-  font-weight: 600;
 }
 
 /* Header */
@@ -25,8 +24,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #34495e;
-  padding: 10px 20px;
+  background-color: #142044; /* Updated color */
+  padding: 30px 30px; /* Further increase padding to adjust height */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +35,13 @@ header {
 header .logo h1 {
   color: #fff;
   font-size: 1.8rem;
+}
+
+header .menu-icon {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
 }
 
 nav ul {
@@ -49,15 +55,22 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #fff; /* White color */
   font-size: 1.1rem;
+  font-weight: bold; /* Make text bold */
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-top: 5px;
+  margin-bottom: 5px; /* Add bottom margin to align with top spacing */
+}
+
+.text-white {
+  color: white !important;
 }
 
 nav ul li a:hover {
-  background-color: #1abc9c;
+  background-color: #dfbd69; /* Updated hover color */
 }
 
 /* Services Section */
@@ -97,13 +110,15 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-  background-color: #34495e;
+  background-color: #142044; /* Updated color */
   color: #fff;
   text-align: center;
   padding: 10px;
   position: fixed;
   width: 100%;
   bottom: 0;
+  height: 50px; /* Set a fixed height */
+  line-height: 30px; /* Center text vertically */
 }
 
 /* Responsive Design */
