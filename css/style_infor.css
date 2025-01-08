@@ -148,6 +148,7 @@ footer {
   bottom: 0;
   height: 50px; /* Set a fixed height */
   line-height: 30px; /* Center text vertically */
+  z-index: 10;
 }
 
 /* Loading Animation */
@@ -157,6 +158,12 @@ footer {
   align-items: center;
   height: 100vh;
   background-color: #fff;
+  position: fixed; /* Make loading screen fixed */
+  width: 100%; /* Cover the entire width */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  z-index: 1; /* Ensure it is above other elements */
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .loading .logo {
