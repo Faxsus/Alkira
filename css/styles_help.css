@@ -359,6 +359,7 @@ footer {
   bottom: 0;
   height: 50px; /* Set a fixed height */
   line-height: 30px; /* Center text vertically */
+  z-index: 10;
 }
 
 /* Loading Animation */
@@ -368,6 +369,12 @@ footer {
   align-items: center;
   height: 100vh;
   background-color: #fff;
+  position: fixed; /* Make loading screen fixed */
+  width: 100%; /* Cover the entire width */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  z-index: 1; /* Ensure it is above other elements */
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .loading .logo {
@@ -406,4 +413,111 @@ footer {
   .form textarea {
     font-size: 1rem;
   }
+}
+
+/* Dark Mode Switch */
+.dark-mode-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dark-mode-switch .moon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 0 0 #d0d5d2;
+  margin-right: 10px;
+}
+
+.dark-mode-switch i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode nav ul li a {
+  color: #e0e0e0;
+}
+
+body.dark-mode nav ul li a.active {
+  background-color: #dfbd69;
+  color: #1f1f1f;
+}
+
+body.dark-mode .home {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+body.dark-mode .home .intro p,
+body.dark-mode .home .news .news-item p,
+body.dark-mode .home .important-info ul li {
+  color: #b0b0b0;
+}
+
+body.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+/* Additional Dark Mode Styles */
+.dark-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+  color: #000;
+}
+
+.dark-mode nav ul li a {
+  color: #000;
+}
+
+.dark-mode nav ul li a:hover {
+  background-color: #34495e;
+}
+
+.dark-mode .category-bar button {
+  background-color: #34495e;
+  color: #000;
+}
+
+.dark-mode .category-bar button:hover {
+  background-color: #2c3e50;
+}
+
+.dark-mode .library-catalog table {
+  background-color: rgba(28, 35, 49, 0.9);
+  color: #fff;
+}
+
+.dark-mode .library-catalog th {
+  background-color: #142044; /* Header background color */
+  color: #dfbd69; /* Header text color */
+}
+
+.dark-mode .library-catalog tr:nth-child(even) {
+  background-color: rgba(44, 62, 80, 0.9);
+}
+
+.dark-mode .library-catalog tr:hover {
+  background-color: rgba(52, 73, 94, 0.9);
+}
+
+.dark-mode footer {
+  background-color: #34495e;
+  color: #000;
 }
