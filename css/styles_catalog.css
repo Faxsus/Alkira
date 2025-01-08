@@ -8,8 +8,8 @@
 /* Global Styles */
 body {
   font-family: "times new roman", serif;
-  background-color: #0d141f;
-  color: #fff;
+  background-color: #fff; /* Default to light mode */
+  color: #000; /* Default to light mode */
   padding-top: 70px;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -17,18 +17,18 @@ body {
 h1,
 h2,
 h3 {
-  color: #fff;
+  color: #000; /* Default to light mode */
 }
 
 .dark-mode {
-  background-color: #fff;
-  color: #000;
+  background-color: #0d141f;
+  color: #fff;
 }
 
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3 {
-  color: #000;
+  color: #fff;
 }
 
 /* Header */
@@ -137,8 +137,8 @@ nav ul li a.active {
 }
 
 .dark-mode .category-bar button {
-  background-color: #34495e;
-  color: #000;
+  background-color: #fff;
+  color: #1c2331;
 }
 
 .dark-mode .category-bar button:hover {
@@ -184,6 +184,7 @@ nav ul li a.active {
   object-fit: cover;
   margin-bottom: 15px;
   border-radius: 8px;
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .book-item h3 {
@@ -237,7 +238,8 @@ nav ul li a.active {
 .library-catalog td {
   border: 1px solid #142044; /* Thicker outline */
   padding: 8px;
-  text-align: left;
+  text-align: center; /* Center-align content */
+  vertical-align: middle; /* Center-align vertically */
 }
 
 .library-catalog th {
@@ -254,15 +256,41 @@ nav ul li a.active {
 }
 
 .library-catalog img {
-  width: 100px;
-  height: 150px;
+  width: 150px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
 }
 
+/* Set fixed widths for table columns */
+.library-catalog th:nth-child(1),
+.library-catalog td:nth-child(1) {
+  width: 50px;
+}
+
+.library-catalog th:nth-child(2),
+.library-catalog td:nth-child(2) {
+  width: 150px;
+}
+
+.library-catalog th:nth-child(3),
+.library-catalog td:nth-child(3) {
+  width: 250px;
+}
+
+.library-catalog th:nth-child(4),
+.library-catalog td:nth-child(4) {
+  width: 150px;
+}
+
+.library-catalog th:nth-child(5),
+.library-catalog td:nth-child(5) {
+  width: 400px;
+}
+
 .dark-mode .library-catalog table {
-  background-color: rgba(28, 35, 49, 0.9);
-  color: #fff;
+  background-color: #fff; /* Set table background to white in dark mode */
+  color: #000; /* Set text color to black in dark mode */
 }
 
 .dark-mode .library-catalog th {
@@ -271,11 +299,11 @@ nav ul li a.active {
 }
 
 .dark-mode .library-catalog tr:nth-child(even) {
-  background-color: rgba(44, 62, 80, 0.9);
+  background-color: rgba(249, 249, 249, 0.9); /* Light background for even rows */
 }
 
 .dark-mode .library-catalog tr:hover {
-  background-color: rgba(52, 73, 94, 0.9);
+  background-color: rgba(224, 224, 224, 0.9); /* Light background on hover */
 }
 
 /* Modal Styles */
@@ -316,11 +344,18 @@ nav ul li a.active {
 }
 
 /* Book Detail Modal Styles */
+.book-detail-modal .modal-dialog {
+  max-width: 60%; /* Adjust the width */
+  margin: auto; /* Center horizontally */
+}
+
 .book-detail-modal .modal-content {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff; /* Set background to solid white */
   color: #000;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-height: 80vh; /* Adjust the height */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 
 .book-detail-modal .modal-header,
@@ -426,8 +461,8 @@ footer {
 }
 
 .dark-mode footer {
-  background-color: #34495e;
-  color: #000;
+  background-color: #142044; /* Match navbar color */
+  color: #fff;
 }
 
 /* Responsive Design */
