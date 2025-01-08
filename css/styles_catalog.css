@@ -82,6 +82,11 @@ nav ul li a:hover {
   background-color: #dfbd69;
 }
 
+nav ul li a.active {
+  background-color: #dfbd69; /* Highlight active link */
+  color: #142044; /* Change text color for active link */
+}
+
 .dark-mode nav ul li a {
   color: #000;
 }
