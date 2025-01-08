@@ -52,6 +52,10 @@
     <!-- Library Catalog Section -->
     <section id="library-catalog" class="library-catalog container">
       <h2>Library Catalog</h2>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Cari judul buku..." onkeyup="searchBooks()" />
+      </div>
+      <div id="notFoundMessage" class="not-found" style="display: none"></div>
       <div class="category-bar">
         <button class="btn btn-secondary" onclick="filterCategory('all')">All</button>
         <button class="btn btn-secondary" onclick="filterCategory('manga')">Manga</button>
@@ -101,6 +105,166 @@
             <td>Novel</td>
             <td>Buku ini mengupas tentang sejarah dunia yang mencakup berbagai peristiwa penting...</td>
             <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Sejarah Dunia">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="manga">
+            <td>5</td>
+            <td><img src="img/komik (1).jpg" alt="Komik 1 Cover" /></td>
+            <td>Komik 1</td>
+            <td>Manga</td>
+            <td>Deskripsi singkat tentang Komik 1...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Komik 1">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="manga">
+            <td>6</td>
+            <td><img src="img/komik (2).jpg" alt="Komik 2 Cover" /></td>
+            <td>Komik 2</td>
+            <td>Manga</td>
+            <td>Deskripsi singkat tentang Komik 2...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Komik 2">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="manga">
+            <td>7</td>
+            <td><img src="img/komik (3).jpg" alt="Komik 3 Cover" /></td>
+            <td>Komik 3</td>
+            <td>Manga</td>
+            <td>Deskripsi singkat tentang Komik 3...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Komik 3">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="manga">
+            <td>8</td>
+            <td><img src="img/komik (4).jpg" alt="Komik 4 Cover" /></td>
+            <td>Komik 4</td>
+            <td>Manga</td>
+            <td>Deskripsi singkat tentang Komik 4...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Komik 4">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="manga">
+            <td>9</td>
+            <td><img src="img/komik (5).jpg" alt="Komik 5 Cover" /></td>
+            <td>Komik 5</td>
+            <td>Manga</td>
+            <td>Deskripsi singkat tentang Komik 5...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Komik 5">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="manga">
+            <td>10</td>
+            <td><img src="img/komik (6).jpg" alt="Komik 6 Cover" /></td>
+            <td>Komik 6</td>
+            <td>Manga</td>
+            <td>Deskripsi singkat tentang Komik 6...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Komik 6">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="manga">
+            <td>11</td>
+            <td><img src="img/komik (7).jpg" alt="Komik 7 Cover" /></td>
+            <td>Komik 7</td>
+            <td>Manga</td>
+            <td>Deskripsi singkat tentang Komik 7...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Komik 7">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>12</td>
+            <td><img src="img/novel (1).jpg" alt="Novel 1 Cover" /></td>
+            <td>Novel 1</td>
+            <td>Novel</td>
+            <td>Deskripsi singkat tentang Novel 1...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Novel 1">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>13</td>
+            <td><img src="img/novel (2).jpg" alt="Novel 2 Cover" /></td>
+            <td>Novel 2</td>
+            <td>Novel</td>
+            <td>Deskripsi singkat tentang Novel 2...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Novel 2">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>14</td>
+            <td><img src="img/novel (3).jpg" alt="Novel 3 Cover" /></td>
+            <td>Novel 3</td>
+            <td>Novel</td>
+            <td>Deskripsi singkat tentang Novel 3...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Novel 3">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>15</td>
+            <td><img src="img/novel (4).jpg" alt="Novel 4 Cover" /></td>
+            <td>Novel 4</td>
+            <td>Novel</td>
+            <td>Deskripsi singkat tentang Novel 4...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Novel 4">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>16</td>
+            <td><img src="img/novel (5).jpg" alt="Novel 5 Cover" /></td>
+            <td>Novel 5</td>
+            <td>Novel</td>
+            <td>Deskripsi singkat tentang Novel 5...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Novel 5">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>17</td>
+            <td><img src="img/novel (6).jpg" alt="Novel 6 Cover" /></td>
+            <td>Novel 6</td>
+            <td>Novel</td>
+            <td>Deskripsi singkat tentang Novel 6...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Novel 6">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>18</td>
+            <td><img src="img/novel.jpg" alt="Novel Cover" /></td>
+            <td>Novel</td>
+            <td>Novel</td>
+            <td>Deskripsi singkat tentang Novel...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Novel">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>19</td>
+            <td><img src="img/pendidikan (1).jpg" alt="Pendidikan 1 Cover" /></td>
+            <td>Pendidikan 1</td>
+            <td>Pendidikan</td>
+            <td>Deskripsi singkat tentang Pendidikan 1...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Pendidikan 1">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>20</td>
+            <td><img src="img/pendidikan (2).jpg" alt="Pendidikan 2 Cover" /></td>
+            <td>Pendidikan 2</td>
+            <td>Pendidikan</td>
+            <td>Deskripsi singkat tentang Pendidikan 2...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Pendidikan 2">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>21</td>
+            <td><img src="img/pendidikan (3).jpg" alt="Pendidikan 3 Cover" /></td>
+            <td>Pendidikan 3</td>
+            <td>Pendidikan</td>
+            <td>Deskripsi singkat tentang Pendidikan 3...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Pendidikan 3">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>22</td>
+            <td><img src="img/pendidikan (4).jpg" alt="Pendidikan 4 Cover" /></td>
+            <td>Pendidikan 4</td>
+            <td>Pendidikan</td>
+            <td>Deskripsi singkat tentang Pendidikan 4...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Pendidikan 4">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>23</td>
+            <td><img src="img/pendidikan (5).jpg" alt="Pendidikan 5 Cover" /></td>
+            <td>Pendidikan 5</td>
+            <td>Pendidikan</td>
+            <td>Deskripsi singkat tentang Pendidikan 5...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Pendidikan 5">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>24</td>
+            <td><img src="img/pendidikan (6).jpg" alt="Pendidikan 6 Cover" /></td>
+            <td>Pendidikan 6</td>
+            <td>Pendidikan</td>
+            <td>Deskripsi singkat tentang Pendidikan 6...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Pendidikan 6">Pinjam</button></td>
           </tr>
         </tbody>
       </table>
@@ -229,6 +393,31 @@
 
         $("#bookDetailModal").modal("show");
       });
+
+      // Search books by title
+      function searchBooks() {
+        const input = document.getElementById("searchInput").value.toLowerCase();
+        const books = document.querySelectorAll(".book-item");
+        let found = false;
+
+        books.forEach((book) => {
+          const title = book.querySelector("td:nth-child(3)").textContent.toLowerCase();
+          if (title.includes(input)) {
+            book.style.display = "";
+            found = true;
+          } else {
+            book.style.display = "none";
+          }
+        });
+
+        const notFoundMessage = document.getElementById("notFoundMessage");
+        if (!found && input) {
+          notFoundMessage.textContent = `Buku dengan judul "${input}" tidak ditemukan`;
+          notFoundMessage.style.display = "block";
+        } else {
+          notFoundMessage.style.display = "none";
+        }
+      }
     </script>
   </body>
 </html>
