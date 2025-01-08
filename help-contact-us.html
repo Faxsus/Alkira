@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help & Contact Us - Perpustakaan Alkira</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles_help.css" />
   </head>
   <body>
@@ -24,7 +25,7 @@
               <li class="nav-item"><a class="nav-link text-white" href="library-catalog.html">Library Catalog</a></li>
               <li class="nav-item"><a class="nav-link text-white" href="Services.html">Services</a></li>
               <li class="nav-item"><a class="nav-link text-white" href="informasi.html">Information</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="help-contact-us.html">Help and Contact Us</a></li>
+              <li class="nav-item"><a class="nav-link text-white active" href="help-contact-us.html">Help and Contact Us</a></li>
               <li class="nav-item"><a class="nav-link text-white" href="about-us.html">About Us</a></li>
             </ul>
           </div>
@@ -56,32 +57,33 @@
       </div>
 
       <!-- Informasi Kontak Pustakawan Section -->
-<div class="contact-info">
-    <h3>Informasi Kontak Pustakawan</h3>
-    <p>Jika Anda membutuhkan bantuan lebih lanjut atau memiliki pertanyaan, Anda dapat menghubungi pustakawan kami melalui:</p>
-    <ul>
-        <li><i class="fas fa-envelope"></i>Email: <a href="mailto:pustakawan@alkira.com">pustakawan@alkira.com</a></li>
-        <li><i class="fas fa-phone"></i>Telepon: 021-12345678</li>
-        <li><i class="fas fa-map-marker-alt"></i>Alamat: Jl. Pendidikan No. 10, Jakarta</li>
-    </ul>
-</div>
+      <div class="contact-info">
+        <h3>Informasi Kontak Pustakawan</h3>
+        <p>Jika Anda membutuhkan bantuan lebih lanjut atau memiliki pertanyaan, Anda dapat menghubungi pustakawan kami melalui:</p>
+        <ul>
+          <li><i class="fas fa-envelope"></i>Email: <a href="mailto:pustakawan@alkira.com">pustakawan@alkira.com</a></li>
+          <li><i class="fas fa-phone"></i>Telepon: 021-12345678</li>
+          <li><i class="fas fa-map-marker-alt"></i>Alamat: Jl. Pendidikan No. 10, Jakarta</li>
+        </ul>
+      </div>
 
-<!-- Formulir Pengaduan atau Saran Section -->
-<div class="form">
-    <h3>Formulir Pengaduan atau Saran</h3>
-    <form action="#" method="POST">
-        <label for="name">Nama Lengkap:</label>
-        <input type="text" id="name" name="name" required>
+      <!-- Formulir Pengaduan atau Saran Section -->
+      <div class="form">
+        <h3>Formulir Pengaduan atau Saran</h3>
+        <form action="#" method="POST">
+          <label for="name">Nama Lengkap:</label>
+          <input type="text" id="name" name="name" required />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
 
-        <label for="message">Pesan:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Pesan:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Kirim Pengaduan / Saran</button>
-    </form>
-</div>
+          <button type="submit">Kirim Pengaduan / Saran</button>
+        </form>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer>

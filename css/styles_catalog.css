@@ -36,8 +36,13 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+<<<<<<< HEAD
   background-color: #142044;
   padding: 30px 30px;
+=======
+  background-color: #142044; /* Updated color */
+  padding: 30px 30px; /* Further increase padding to adjust height */
+>>>>>>> afa2ae50d0265cd8f96e2138580c876572f15c8e
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,13 +73,18 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #fff; /* White color */
   font-size: 1.1rem;
+<<<<<<< HEAD
   font-weight: bold;
+=======
+  font-weight: bold; /* Make text bold */
+>>>>>>> afa2ae50d0265cd8f96e2138580c876572f15c8e
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
   margin-top: 5px;
+<<<<<<< HEAD
   margin-bottom: 5px;
 }
 
@@ -140,6 +150,23 @@ nav ul li a:hover {
   background-color: #2c3e50;
 }
 
+=======
+  margin-bottom: 5px; /* Add bottom margin to align with top spacing */
+}
+
+nav ul li a.active {
+  background-color: #dfbd69; /* Highlight active link */
+  color: #142044; /* Change text color for active link */
+}
+
+.text-white {
+  color: white !important;
+}
+
+nav ul li a:hover {
+  background-color: #dfbd69; /* Updated hover color */
+}
+>>>>>>> afa2ae50d0265cd8f96e2138580c876572f15c8e
 /* Library Catalog Section */
 .library-catalog {
   padding: 80px 20px;
@@ -401,13 +428,19 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
+<<<<<<< HEAD
   background-color: #142044;
+=======
+  background-color: #142044; /* Updated color */
+>>>>>>> afa2ae50d0265cd8f96e2138580c876572f15c8e
   color: #fff;
   text-align: center;
   padding: 10px;
   position: fixed;
   width: 100%;
   bottom: 0;
+  height: 50px; /* Set a fixed height */
+  line-height: 30px; /* Center text vertically */
 }
 
 .dark-mode footer {

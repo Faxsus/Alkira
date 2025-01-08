@@ -64,6 +64,11 @@ nav ul li a {
   margin-bottom: 5px; /* Add bottom margin to align with top spacing */
 }
 
+nav ul li a.active {
+  background-color: #dfbd69; /* Highlight active link */
+  color: #142044; /* Change text color for active link */
+}
+
 .text-white {
   color: white !important;
 }
@@ -134,13 +139,15 @@ tr:hover {
 
 /* Footer */
 footer {
-  background-color: #34495e;
+  background-color: #142044; /* Updated color */
   color: #fff;
   text-align: center;
   padding: 10px;
   position: fixed;
   width: 100%;
   bottom: 0;
+  height: 50px; /* Set a fixed height */
+  line-height: 30px; /* Center text vertically */
 }
 
 /* Responsive Design */
