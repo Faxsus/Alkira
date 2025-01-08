@@ -272,7 +272,7 @@ body.dark-mode .home .important-info ul li {
 }
 
 body.dark-mode footer {
-  background-color: #050a18; /* Ensure color remains #142044 */
+  background-color: #142044; /* Ensure color remains #142044 */
   color: #e0e0e0;
 }
 

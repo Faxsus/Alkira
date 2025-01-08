@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles_help.css" />
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
   </head>
-  <body class="no-scroll">
+  <body>
     <!-- Loading Animation -->
     <div class="loading">
       <dotlottie-player src="https://lottie.host/2b55e0ad-7f01-4d8b-9583-276e0badf879/gHVwgpbfMJ.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
@@ -147,7 +147,6 @@
       window.addEventListener("load", () => {
         setTimeout(() => {
           document.querySelector(".loading").style.display = "none";
-          document.body.classList.remove("no-scroll");
         }, 1000);
       });
 
