@@ -197,6 +197,9 @@ nav ul li a:hover {
 
 .carousel-inner img {
   border-radius: 10px; /* Ensure images have rounded corners */
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Footer */
