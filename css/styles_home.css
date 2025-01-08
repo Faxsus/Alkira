@@ -27,7 +27,7 @@ header {
   top: 0;
   width: 100%;
   background-color: #142044; /* Updated color */
-  padding: 30px 30px; /* Further increase padding to adjust height */
+  padding: 20px 0; /* Adjust padding */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,16 +49,17 @@ header .menu-icon {
 nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #fff; /* White color */
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold; /* Make text bold */
   padding: 10px;
   border-radius: 5px;
@@ -216,5 +217,14 @@ footer {
 
   footer {
     font-size: 0.9rem;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
   }
 }
