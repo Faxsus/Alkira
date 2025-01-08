@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Catalog - Perpustakaan Alkira</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles_catalog.css" />
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif;
+      }
+    </style>
   </head>
   <body>
+    <!-- Loading Animation -->
+    <div class="loading">
+      <dotlottie-player src="https://lottie.host/2b55e0ad-7f01-4d8b-9583-276e0badf879/gHVwgpbfMJ.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+    </div>
+
     <!-- Header -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -26,6 +39,11 @@
               <li class="nav-item"><a class="nav-link text-white" href="informasi.html">Information</a></li>
               <li class="nav-item"><a class="nav-link text-white" href="help-contact-us.html">Help and Contact Us</a></li>
               <li class="nav-item"><a class="nav-link text-white" href="about-us.html">About Us</a></li>
+              <li class="nav-item">
+                <div class="dark-mode-switch" onclick="toggleDarkMode()">
+                  <div class="moon"></div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -33,50 +51,185 @@
     </header>
 
     <!-- Library Catalog Section -->
-    <section id="library-catalog" class="library-catalog">
+    <section id="library-catalog" class="library-catalog container">
       <h2>Library Catalog</h2>
-      <div class="book-list">
-        <!-- Book 1 -->
-        <div class="book-item">
-          <img src="img/buku 1.jpg" alt="Book 1 Cover" />
-          <p>Pengarang: Henry Manampiring</p>
-          <p>
-            Deskripsi: Isi buku ini mengajarkan kita untuk fokus pada hal-hal yang dapat kita kontrol, seperti sikap, tindakan, dan pemikiran kita sendiri, sementara menerima dengan bijaksana bahwa banyak hal dalam hidup berada di luar
-            kendali kita.
-          </p>
-        </div>
+      <div class="category-bar">
+        <button class="btn btn-secondary" onclick="filterCategory('all')">All</button>
+        <button class="btn btn-secondary" onclick="filterCategory('manga')">Manga</button>
+        <button class="btn btn-secondary" onclick="filterCategory('novel')">Novel</button>
+        <button class="btn btn-secondary" onclick="filterCategory('pendidikan')">Pendidikan</button>
+      </div>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Gambar</th>
+            <th>Judul Buku</th>
+            <th>Kategori</th>
+            <th>Deskripsi</th>
+            <th>Pinjam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="book-item" data-category="novel">
+            <td>1</td>
+            <td><img src="img/buku 1.jpg" alt="Book 1 Cover" /></td>
+            <td>Filosofi Teras</td>
+            <td>Novel</td>
+            <td>Isi buku ini mengajarkan kita untuk fokus pada hal-hal yang dapat kita kontrol...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Filosofi Teras">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>2</td>
+            <td><img src="img/buku 2.jpg" alt="Book 2 Cover" /></td>
+            <td>The Psychology of Money</td>
+            <td>Pendidikan</td>
+            <td>Isi buku ini membahas berbagai aspek psikologi yang berpengaruh dalam keuangan...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="The Psychology of Money">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="pendidikan">
+            <td>3</td>
+            <td><img src="img/buku 3.jpg" alt="Book 3 Cover" /></td>
+            <td>Rich Dad Poor Dad</td>
+            <td>Pendidikan</td>
+            <td>Isi buku Ayah Kaya dalam buku “Rich Dad Poor Dad” menekankan pentingnya kewirausahaan...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Rich Dad Poor Dad">Pinjam</button></td>
+          </tr>
+          <tr class="book-item" data-category="novel">
+            <td>4</td>
+            <td><img src="https://via.placeholder.com/150x200" alt="Book 4 Cover" /></td>
+            <td>Sejarah Dunia</td>
+            <td>Novel</td>
+            <td>Buku ini mengupas tentang sejarah dunia yang mencakup berbagai peristiwa penting...</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#borrowModal" data-title="Sejarah Dunia">Pinjam</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-        <!-- Book 2 -->
-        <div class="book-item">
-          <img src="img/buku 2.jpg" alt="Book 2 Cover" />
-          <p>Pengarang: Morgan Housel</p>
-          <p>
-            Deskripsi: Isi buku ini membahas berbagai aspek psikologi yang berpengaruh dalam keuangan, seperti kerentanan kita terhadap godaan, kecenderungan kita untuk mengambil risiko, dan efek dari perilaku manusia dalam menghadapi
-            ketidakpastian ekonomi.
-          </p>
-        </div>
-
-        <!-- Book 3 -->
-        <div class="book-item">
-          <img src="img/buku 3.jpg" alt="Book 3 Cover" />
-          <p>Pengarang: Robert Kiyosaki</p>
-          <p>Deskripsi: Isi buku Ayah Kaya dalam buku “Rich Dad Poor Dad” menekankan pentingnya kewirausahaan dan memiliki bisnis sendiri sebagai cara untuk mencapai kebebasan finansial.</p>
-        </div>
-
-        <!-- Book 4 -->
-        <div class="book-item">
-          <img src="https://via.placeholder.com/150x200" alt="Book 4 Cover" />
-          <p>Pengarang: Bob White</p>
-          <p>Deskripsi: Buku ini mengupas tentang sejarah dunia yang mencakup berbagai peristiwa penting yang membentuk peradaban kita.</p>
+    <!-- Book Detail Modal -->
+    <div class="modal fade book-detail-modal" id="bookDetailModal" tabindex="-1" aria-labelledby="bookDetailModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookDetailModalLabel">Detail Buku</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img id="bookDetailImage" src="" alt="Book Image" />
+            <h3 id="bookDetailTitle"></h3>
+            <p id="bookDetailCategory"></p>
+            <p id="bookDetailDescription"></p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Borrow Modal -->
+    <div class="modal fade" id="borrowModal" tabindex="-1" aria-labelledby="borrowModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="borrowModalLabel">Pinjam Buku</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="borrowForm">
+              <div class="form-group">
+                <label for="bookTitle">Judul Buku</label>
+                <input type="text" class="form-control" id="bookTitle" readonly />
+              </div>
+              <div class="form-group">
+                <label for="borrowerName">Nama Peminjam</label>
+                <input type="text" class="form-control" id="borrowerName" required />
+              </div>
+              <div class="form-group">
+                <label for="borrowDate">Tanggal Peminjaman</label>
+                <input type="date" class="form-control" id="borrowDate" required />
+              </div>
+              <div class="form-group">
+                <label for="borrowerId">NIK/ID Peminjam</label>
+                <input type="text" class="form-control" id="borrowerId" required />
+              </div>
+              <div class="form-group">
+                <label for="borrowerEmail">Email Peminjam</label>
+                <input type="email" class="form-control" id="borrowerEmail" required />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer>
       <p>&copy; 2025 Perpustakaan Alkira | Semua Hak Dilindungi</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Hide loading animation after 1 second
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.querySelector(".loading").style.display = "none";
+        }, 1000);
+      });
+
+      // Filter books by category
+      function filterCategory(category) {
+        const books = document.querySelectorAll(".book-item");
+        books.forEach((book) => {
+          if (category === "all" || book.dataset.category === category) {
+            book.style.display = "";
+          } else {
+            book.style.display = "none";
+          }
+        });
+      }
+
+      // Fill modal with book title
+      $("#borrowModal").on("show.bs.modal", function (event) {
+        var button = $(event.relatedTarget);
+        var title = button.data("title");
+        var modal = $(this);
+        modal.find(".modal-body #bookTitle").val(title);
+      });
+
+      // Form validation
+      $("#borrowForm").on("submit", function (event) {
+        event.preventDefault();
+        // Add custom validation logic here
+        alert("Form submitted successfully!");
+        $("#borrowModal").modal("hide");
+      });
+
+      // Toggle dark mode
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      // Show book details in modal
+      $(".book-item img").on("click", function () {
+        var bookItem = $(this).closest(".book-item");
+        var imageSrc = $(this).attr("src");
+        var title = bookItem.find("td:nth-child(3)").text();
+        var category = bookItem.find("td:nth-child(4)").text();
+        var description = bookItem.find("td:nth-child(5)").text();
+
+        $("#bookDetailImage").attr("src", imageSrc);
+        $("#bookDetailTitle").text(title);
+        $("#bookDetailCategory").text(category);
+        $("#bookDetailDescription").text(description);
+
+        $("#bookDetailModal").modal("show");
+      });
+    </script>
   </body>
 </html>
