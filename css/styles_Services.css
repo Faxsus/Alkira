@@ -218,6 +218,64 @@ footer {
 
 /* Dark Mode Styles */
 .dark-mode {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+.dark-mode header {
+  background-color: #1a1a1a;
+}
+
+.dark-mode footer {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .card {
+  background-color: #444;
+  color: #f4f4f4;
+}
+
+.dark-mode .card-title,
+.dark-mode .card-text {
+  color: #f4f4f4;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #142044; /* Ensure navbar uses this color in dark mode */
+}
+
+body.dark-mode nav ul li a {
+  color: #e0e0e0;
+}
+
+body.dark-mode nav ul li a.active {
+  background-color: #dfbd69;
+  color: #1f1f1f;
+}
+
+body.dark-mode .home {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+body.dark-mode .home .intro p,
+body.dark-mode .home .news .news-item p,
+body.dark-mode .home .important-info ul li {
+  color: #b0b0b0;
+}
+
+body.dark-mode footer {
+  background-color: #142044; /* Ensure footer uses this color in dark mode */
+  color: #e0e0e0;
+}
+
+/* Additional Dark Mode Styles */
+.dark-mode {
   background-color: #fff;
   color: #000;
 }
@@ -290,37 +348,4 @@ footer {
   footer {
     font-size: 0.9rem;
   }
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #333;
-  color: #f4f4f4;
-}
-
-body.dark-mode header {
-  background-color: #142044; /* Ensure color remains #142044 */
-}
-
-body.dark-mode footer {
-  background-color: #142044; /* Ensure color remains #142044 */
-}
-
-body.dark-mode .card {
-  background-color: #444;
-  color: #f4f4f4;
-}
-
-body.dark-mode .card-title,
-body.dark-mode .card-text {
-  color: #f4f4f4;
-}
-
-body.dark-mode nav ul li a {
-  color: #e0e0e0;
-}
-
-body.dark-mode nav ul li a.active {
-  background-color: #dfbd69;
-  color: #142044; /* Ensure color remains #142044 */
 }

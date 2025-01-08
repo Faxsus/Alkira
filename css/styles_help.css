@@ -442,7 +442,7 @@ body.dark-mode {
 }
 
 body.dark-mode header {
-  background-color: #1f1f1f;
+  background-color: #142044;
 }
 
 body.dark-mode nav ul li a {
@@ -466,8 +466,31 @@ body.dark-mode .home .important-info ul li {
 }
 
 body.dark-mode footer {
-  background-color: #1f1f1f;
+  background-color: #142044;
   color: #e0e0e0;
+}
+
+body.dark-mode .help-contact-us {
+  background-color: #1f1f1f; /* Dark background for help-contact-us section */
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .faq {
+  background-color: #2c2c2c; /* Dark background for FAQ */
+  color: #e0e0e0; /* Light text color */
+  border-color: #444; /* Dark border color */
+}
+
+body.dark-mode .contact-info {
+  background-color: #2c2c2c; /* Dark background for contact-info */
+  color: #e0e0e0; /* Light text color */
+  border-color: #444; /* Dark border color */
+}
+
+body.dark-mode .form {
+  background-color: #2c2c2c; /* Dark background for form */
+  color: #e0e0e0; /* Light text color */
+  border-color: #444; /* Dark border color */
 }
 
 /* Additional Dark Mode Styles */
