@@ -74,6 +74,9 @@
           </tr>
         </thead>
         <tbody>
+          <tr id="notFoundRow" style="display: none">
+            <td colspan="6" class="text-center text-danger">Buku dengan judul "<span id="notFoundText"></span>" tidak ditemukan</td>
+          </tr>
           <tr class="book-item" data-category="novel">
             <td>1</td>
             <td><img src="img/buku 1.jpg" alt="Book 1 Cover" /></td>
@@ -538,12 +541,13 @@
           }
         });
 
-        const notFoundMessage = document.getElementById("notFoundMessage");
+        const notFoundRow = document.getElementById("notFoundRow");
+        const notFoundText = document.getElementById("notFoundText");
         if (!found && input) {
-          notFoundMessage.textContent = `Buku dengan judul "${input}" tidak ditemukan`;
-          notFoundMessage.style.display = "block";
+          notFoundText.textContent = input;
+          notFoundRow.style.display = "table-row";
         } else {
-          notFoundMessage.style.display = "none";
+          notFoundRow.style.display = "none";
         }
       }
     </script>
