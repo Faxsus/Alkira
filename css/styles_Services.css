@@ -326,6 +326,11 @@ body.dark-mode footer {
   color: #000;
 }
 
+/* Disable scrolling */
+.no-scroll {
+  overflow: hidden;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .services h2 {

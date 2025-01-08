@@ -310,3 +310,8 @@ body.dark-mode footer {
   background-color: #34495e;
   color: #000;
 }
+
+/* Disable scrolling */
+.no-scroll {
+  overflow: hidden;
+}

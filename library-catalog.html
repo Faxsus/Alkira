@@ -380,8 +380,12 @@
       window.addEventListener("load", () => {
         setTimeout(() => {
           document.querySelector(".loading").style.display = "none";
+          document.body.style.overflow = "auto"; // Enable scrolling
         }, 1000);
       });
+
+      // Prevent scrolling when loading is visible
+      document.body.style.overflow = "hidden";
 
       // Filter books by category
       function filterCategory(category) {

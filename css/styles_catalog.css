@@ -380,7 +380,14 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #0d141f;
+  background-color: #fff;
+  position: fixed; /* Make loading screen fixed */
+  width: 100%; /* Cover the entire width */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  z-index: 1; /* Ensure it is above other elements */
+  overflow: hidden; /* Prevent scrolling */
+  pointer-events: all; /* Prevent interactions */
 }
 
 .loading .logo {
@@ -399,15 +406,18 @@ nav ul li a:hover {
   }
 }
 
-/* Footer */
 footer {
-  background-color: #142044;
+  background-color: #142044; /* Updated color */
   color: #fff;
   text-align: center;
   padding: 10px;
   position: fixed;
   width: 100%;
   bottom: 0;
+  height: 50px; /* Set a fixed height */
+  line-height: 30px; /* Center text vertically */
+  z-index: 10;
+  overflow: hidden;
 }
 
 .dark-mode footer {
