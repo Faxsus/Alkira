@@ -44,7 +44,7 @@
     </header>
 
     <!-- Help & Contact Us Section -->
-    <section id="help-contact-us" class="help-contact-us">
+    <section id="help-contact-us" class="help-contact-us container">
       <h2>Help & Contact Us</h2>
 
       <!-- FAQ Section -->
@@ -111,6 +111,13 @@
       </div>
     </section>
 
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" style="display: none">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer>
       <p>&copy; 2025 Perpustakaan Alkira | Semua Hak Dilindungi</p>
@@ -128,15 +135,24 @@
       form.addEventListener("submit", (e) => {
         e.preventDefault(); // Mencegah reload halaman setelah submit
 
+        // Show loading spinner
+        document.querySelector(".loading-spinner").style.display = "flex";
+
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then((response) => {
             console.log("Success!", response);
+            // Hide loading spinner
+            document.querySelector(".loading-spinner").style.display = "none";
             // Memunculkan modal setelah pengiriman berhasil
             const successModal = new bootstrap.Modal(document.getElementById("successModal"));
             successModal.show();
+            // Clear form fields
+            form.reset();
           })
           .catch((error) => {
             console.error("Error!", error.message);
+            // Hide loading spinner
+            document.querySelector(".loading-spinner").style.display = "none";
           });
       });
 

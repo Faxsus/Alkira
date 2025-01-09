@@ -14,8 +14,8 @@ body {
 /* Global Styles */
 body {
   font-family: "times new roman", sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #eaeaea; /* Updated background color */
+  color: #333; /* Updated text color */
   padding-top: 50px;
 }
 
@@ -87,8 +87,9 @@ nav ul li a:hover {
 /* Help & Contact Us Section */
 .help-contact-us {
   padding: 80px 20px;
-  background-color: #f9f9f9;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .help-contact-us h2 {
@@ -105,7 +106,7 @@ nav ul li a:hover {
 
 /* FAQ Section */
 .faq {
-  background-color: #fff;
+  background-color: #fff; /* Updated background color */
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -244,12 +245,12 @@ faq ul {
 
 /* Formulir Pengaduan atau Saran Section */
 .form {
-  background-color: #fff;
+  background-color: #fff; /* Updated background color */
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  max-width: 800px;
+  max-width: 1200px; /* Match the width of the elements above */
   margin: 0 auto;
   text-align: center;
   transition: transform 0.3s ease;
@@ -350,8 +351,8 @@ faq ul {
 
 /* Footer */
 footer {
-  background-color: #142044; /* Updated color */
-  color: #fff;
+  background-color: #142044; /* Updated background color */
+  color: #ffffff; /* Updated text color */
   text-align: center;
   padding: 10px;
   position: fixed;
@@ -391,6 +392,19 @@ footer {
   50% {
     opacity: 0;
   }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1050; /* Ensure it is above other elements */
 }
 
 /* Responsive Design */

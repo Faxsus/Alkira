@@ -108,6 +108,7 @@ nav ul li a:hover {
   font-size: 2rem;
   color: #34495e;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 /* Tabel Styles */
@@ -140,7 +141,7 @@ td {
 /* Specific styles for "Jadwal Layanan Perpustakaan" and "Kegiatan Perpustakaan" tables */
 .jadwal-layanan-perpustakaan,
 .kegiatan-perpustakaan {
-  width: 80%; /* Reduce table width */
+  width: 700px; /* Set fixed width */
   margin: 20px auto; /* Center the tables */
 }
 
